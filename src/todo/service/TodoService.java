@@ -16,6 +16,16 @@ public class TodoService {
 
 	public void postTodo(Scanner sc) {
 
+		sc.nextLine(); // 버퍼 비우기
+		
+		System.out.print("할 일을 입력해 주세요 : ");
+		String title = sc.nextLine();
+
+		Todo todo = new Todo();
+		todo.setTitle(title);
+		todoList.add(todo);
+
+		System.out.println("할 일이 추가 되었습니다!");
 	}
 
 }
