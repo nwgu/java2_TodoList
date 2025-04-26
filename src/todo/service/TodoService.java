@@ -51,4 +51,28 @@ public class TodoService {
 			return "미완료";
 		}
 	}
+
+	public void removeTodo(Scanner sc) {
+		getTodo();
+
+		System.out.print("삭제할 투 두 번호를 입력해 주세요 : ");
+
+		int reqTodoId = sc.nextInt(); // 사용자가 쓴 투 두 번호
+
+		Todo findTodo = null; // 투 두를 찾았을 때 값을 넣기 위한 임시 변수
+
+		for (Todo todo : todoList) {
+			if (reqTodoId == todo.getTodoId()) {
+				findTodo = todo;
+			}
+		}
+
+		if (findTodo == null) {
+			System.out.println("존재하지 않는 번호 입니다.");
+
+		} else {
+			todoList.remove(findTodo);
+			System.out.println("할 일이 삭제 되었습니다ㅠ");
+		}
+	}
 }

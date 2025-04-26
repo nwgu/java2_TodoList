@@ -22,4 +22,8 @@ public class TodoController {
 	public void getTodo() {
 		todoService.getTodo();
 	}
+
+	public void removeTodo(Scanner sc) {
+		todoService.removeTodo(sc);
+	}
 }

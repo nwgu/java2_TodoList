@@ -41,6 +41,10 @@ public class ConsoleUIController {
 			todoController.postTodo(sc);
 		}
 		
+		else if (request.equals("/remove/todo")){
+			todoController.removeTodo(sc);
+		}
+		
 		else {
 			System.out.println("존재하지 않는 명령어");
 		}
