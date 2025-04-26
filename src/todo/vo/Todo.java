@@ -1,5 +1,7 @@
 package todo.vo;
 
+import todo.util.CurrentDateTime;
+
 /*
  * todo 속성을 가진 클래스
  * */
@@ -7,8 +9,8 @@ public class Todo {
 
 	private int todoId; // todo 고유 번호
 	private String title; // todo 제목
-	private String createAt; // 생성된 날짜
-	private boolean isCompleted; // 완료 여부
+	private String createAt = CurrentDateTime.now(); // 생성된 날짜
+	private boolean isCompleted = false; // 완료 여부
 
 	public int getTodoId() {
 		return todoId;
