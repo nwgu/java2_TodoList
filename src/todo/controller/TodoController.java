@@ -18,4 +18,8 @@ public class TodoController {
 	public void postTodo(Scanner sc) {
 		todoService.postTodo(sc);
 	}
+
+	public void getTodo() {
+		todoService.getTodo();
+	}
 }
