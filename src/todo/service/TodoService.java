@@ -39,8 +39,16 @@ public class TodoService {
 			System.out.println("번호 : " + todo.getTodoId());
 			System.out.println("할일 : " + todo.getTitle());
 			System.out.println("등록일 : " + todo.getCreateAt());
-			System.out.println("완료여부 : " + todo.getIsCompleted());
+			System.out.println("완료여부 : " + parseComplete(todo.getIsCompleted()));
 			System.out.println();
+		}
+	}
+
+	public String parseComplete(boolean isComplete) {
+		if (isComplete) {
+			return "완료";
+		} else {
+			return "미완료";
 		}
 	}
 }
