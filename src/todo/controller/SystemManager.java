@@ -5,9 +5,13 @@ package todo.controller;
  * */
 public class SystemManager {
 
-	private ConsoleUIController consoleUIController;
+	private ConsoleUIController consoleUIController; // 실제 객체 값이 들어있음
+	private TodoController todoController; // 실제 객체 값이 들어있음
 
-	public SystemManager() {
+	// SystemManager 가 Main 에서 호출 됨과 동시에 생성자 실행
+	// 또한 아래에 있는 TodoController, ConsoleUIController도 순차적으로 객체화
+	public SystemManager() { 
+		this.todoController = new TodoController();
 		this.consoleUIController = new ConsoleUIController();
 	}
 
