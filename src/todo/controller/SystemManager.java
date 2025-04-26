@@ -12,6 +12,6 @@ public class SystemManager {
 	}
 
 	public void start() {
-
+		consoleUIController.start();
 	}
 }
