@@ -12,7 +12,10 @@ public class SystemManager {
 	// 또한 아래에 있는 TodoController, ConsoleUIController도 순차적으로 객체화
 	public SystemManager() { 
 		this.todoController = new TodoController();
-		this.consoleUIController = new ConsoleUIController();
+		
+		// 객체화가 진행된 변수 this.todoController 는 딱 한 번 new 를 통해 객체화 진행 후,
+		// ConsoleUIController 클래스에서 가져다 쓰기 위해 생성자로 인자 값 전달
+		this.consoleUIController = new ConsoleUIController(this.todoController);
 	}
 
 	public void start() {
