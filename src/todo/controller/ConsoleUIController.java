@@ -33,6 +33,10 @@ public class ConsoleUIController {
 			sc.close();
 		}
 
+		else if (request.equals("/post/todo")){
+			todoController.postTodo(sc);
+		}
+		
 		else {
 			System.out.println("존재하지 않는 명령어");
 		}
