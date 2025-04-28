@@ -12,6 +12,11 @@ public class Todo {
 	private String createAt = CurrentDateTime.now(); // 생성된 날짜
 	private boolean isCompleted = false; // 완료 여부
 
+	public Todo(int todoId, String title) {
+		this.todoId = todoId;
+		this.title = title;
+	}
+
 	public int getTodoId() {
 		return todoId;
 	}

@@ -30,11 +30,16 @@ public class TodoService {
 				return;
 			}
 		}
-		Todo todo = new Todo();
-		todoLastId++;
-		todo.setTodoId(todoLastId);
-		todo.setTitle(title);
-		todoList.add(todo);
+		
+		// 버전 1
+		//Todo todo = new Todo();
+		//todoLastId++;
+		//todo.setTodoId(todoLastId);
+		//todo.setTitle(title);
+		//todoList.add(todo);
+		
+		// 버전 2
+		todoList.add(new Todo(++todoLastId, title));
 
 		System.out.println("할 일이 추가 되었습니다!");
 	}
