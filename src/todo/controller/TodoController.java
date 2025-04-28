@@ -30,4 +30,8 @@ public class TodoController {
 	public void completeTodo(Scanner sc) {
 		todoService.completeTodo(sc);
 	}
+
+	public void searchTodo(Scanner sc) {
+		todoService.searchTodo(sc);
+	}
 }

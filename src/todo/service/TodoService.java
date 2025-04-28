@@ -95,4 +95,33 @@ public class TodoService {
 			System.out.println("존재하지 않는 번호입니다.");
 		}
 	}
+
+	public void searchTodo(Scanner sc) {
+		sc.nextLine(); // 버퍼 비우기
+		System.out.print("검색할 키워드를 입력하세요 : ");
+		String keyword = sc.nextLine();
+
+		List<Todo> findTodoList = new ArrayList<>();
+
+		for (Todo todo : todoList) {
+			if (todo.getTitle().contains(keyword)) {
+				findTodoList.add(todo);
+			}
+		}
+
+		if (findTodoList.isEmpty()) {
+			System.out.println("검색 결과가 존재하지 않습니다.");
+		} else {
+
+			System.out.println("===검색 결과===");
+
+			for (Todo todo : findTodoList) {
+				System.out.println("번호 : " + todo.getTodoId());
+				System.out.println("할일 : " + todo.getTitle());
+				System.out.println("등록일 : " + todo.getCreateAt());
+				System.out.println("완료여부 : " + parseComplete(todo.getIsCompleted()));
+				System.out.println();
+			}
+		}
+	}
 }
