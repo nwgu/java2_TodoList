@@ -23,6 +23,13 @@ public class TodoService {
 		System.out.print("할 일을 입력해 주세요 : ");
 		String title = sc.nextLine();
 
+		
+		for (Todo todo : todoList) {
+			if (todo.getTitle().equals(title)) {
+				System.out.println("이미 같은 할 일이 존재합니다!");
+				return;
+			}
+		}
 		Todo todo = new Todo();
 		todoLastId++;
 		todo.setTodoId(todoLastId);
