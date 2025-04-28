@@ -124,4 +124,21 @@ public class TodoService {
 			}
 		}
 	}
+
+	public void countTodo() {
+		int total = todoList.size();
+		int completed = 0;
+
+		for (Todo todo : todoList) {
+			if (todo.getIsCompleted()) {
+				completed++;
+			}
+		}
+
+		int incomplete = total - completed;
+
+		System.out.println("전체 할 일 개수 : " + total);
+		System.out.println("완료된 할 일 개수 : " + completed);
+		System.out.println("미완료 할 일 개수 : " + incomplete);
+	}
 }

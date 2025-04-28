@@ -34,4 +34,8 @@ public class TodoController {
 	public void searchTodo(Scanner sc) {
 		todoService.searchTodo(sc);
 	}
+
+	public void countTodo() {
+		todoService.countTodo();
+	}
 }

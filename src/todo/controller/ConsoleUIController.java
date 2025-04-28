@@ -32,6 +32,10 @@ public class ConsoleUIController {
 			running = false;
 			sc.close();
 		}
+		
+		else if (request.equals("/count/todo")){
+			todoController.countTodo();
+		}
 
 		else if (request.equals("/search/todo")){
 			todoController.searchTodo(sc);
