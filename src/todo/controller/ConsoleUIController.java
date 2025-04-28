@@ -33,6 +33,10 @@ public class ConsoleUIController {
 			sc.close();
 		}
 
+		else if (request.equals("/complete/todo")){
+			todoController.completeTodo(sc);
+		}
+		
 		else if (request.equals("/get/todo")){
 			todoController.getTodo();
 		}

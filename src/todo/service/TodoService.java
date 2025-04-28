@@ -75,4 +75,24 @@ public class TodoService {
 			System.out.println("할 일이 삭제 되었습니다ㅠ");
 		}
 	}
+
+	public void completeTodo(Scanner sc) {
+		getTodo();
+		System.out.print("완료 처리할 투 두 번호를 입력해 주세요 : ");
+		int reqTodoId = sc.nextInt();
+		boolean found = false;
+
+		for (Todo todo : todoList) {
+			if (reqTodoId == todo.getTodoId()) {
+				todo.setIsCompleted(true);
+				System.out.println("할 일이 완료 처리되었습니다!");
+				found = true;
+				break;
+			}
+		}
+
+		if (!found) {
+			System.out.println("존재하지 않는 번호입니다.");
+		}
+	}
 }
