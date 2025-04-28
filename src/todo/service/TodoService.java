@@ -141,4 +141,31 @@ public class TodoService {
 		System.out.println("완료된 할 일 개수 : " + completed);
 		System.out.println("미완료 할 일 개수 : " + incomplete);
 	}
+
+	public void updateTodo(Scanner sc) {
+		getTodo();
+
+		System.out.print("수정할 투 두 번호를 입력하세요 : ");
+		int id = sc.nextInt();
+		sc.nextLine(); // 버퍼 클리어
+
+		Todo findTodo = null;
+		for (Todo todo : todoList) {
+			if (todo.getTodoId() == id) {
+				findTodo = todo;
+				break;
+			}
+		}
+
+		if (findTodo == null) {
+			System.out.println("존재하지 않는 번호입니다.");
+			return;
+		}
+
+		System.out.print("새로운 제목을 입력하세요 : ");
+		String newTitle = sc.nextLine();
+		findTodo.setTitle(newTitle);
+
+		System.out.println("할 일이 수정되었습니다!");
+	}
 }

@@ -32,6 +32,10 @@ public class ConsoleUIController {
 			running = false;
 			sc.close();
 		}
+
+		else if (request.equals("/update/todo")){
+			todoController.updateTodo(sc);
+		}
 		
 		else if (request.equals("/count/todo")){
 			todoController.countTodo();

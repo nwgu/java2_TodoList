@@ -38,4 +38,8 @@ public class TodoController {
 	public void countTodo() {
 		todoService.countTodo();
 	}
+
+	public void updateTodo(Scanner sc) {
+		todoService.updateTodo(sc);
+	}
 }
