@@ -33,6 +33,10 @@ public class ConsoleUIController {
 			sc.close();
 		}
 
+		else if (request.equals("/random/todo")){
+			todoController.randomTodo();
+		}
+		
 		else if (request.equals("/update/todo")){
 			todoController.updateTodo(sc);
 		}

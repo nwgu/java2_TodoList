@@ -42,4 +42,8 @@ public class TodoController {
 	public void updateTodo(Scanner sc) {
 		todoService.updateTodo(sc);
 	}
+
+	public void randomTodo() {
+		todoService.randomTodo();
+	}
 }

@@ -2,6 +2,7 @@ package todo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import todo.vo.Todo;
@@ -23,7 +24,6 @@ public class TodoService {
 		System.out.print("할 일을 입력해 주세요 : ");
 		String title = sc.nextLine();
 
-		
 		for (Todo todo : todoList) {
 			if (todo.getTitle().equals(title)) {
 				System.out.println("이미 같은 할 일이 존재합니다!");
@@ -174,5 +174,24 @@ public class TodoService {
 		findTodo.setTitle(newTitle);
 
 		System.out.println("할 일이 수정되었습니다!");
+	}
+
+	public void randomTodo() {
+
+		if (todoList.isEmpty()) {
+			System.out.println("랜덤으로 출력할 할 일이 존재하지 않습니다!");
+			return;
+		}
+
+		Random rd = new Random();
+		int rnTodoIdx = rd.nextInt(todoList.size());
+
+		Todo todo = todoList.get(rnTodoIdx);
+
+		System.out.println("== 오늘의 할 일 ==");
+		System.out.println("번호 : " + todo.getTodoId());
+		System.out.println("할일 : " + todo.getTitle());
+		System.out.println("등록일 : " + todo.getCreateAt());
+		System.out.println("완료여부 : " + parseComplete(todo.getIsCompleted()));
 	}
 }
